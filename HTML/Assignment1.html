@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online_Store</title>
+</head>
+<body >
+     <div class="Online_Store" style="border: 2px solid purple; padding: 20px; margin: 50px auto; text-align: center;">
+        <h2>Online Store</h2>
+        <p>Welcome to our online store.</p>
+        <div id="items"></div>
+        <button onclick="order()">Order Now</button>
+    </div>
+    <script>
+        const Online_Store ={
+            TEA: 450,
+            COFFEE: 600,
+            SUGAR: 700,
+            RICE: 400
+        }
+         const items = document.getElementById("items");
+
+        for (let i in Online_Store) {
+            items.innerHTML += `
+                <div class="item">
+
+                    <p>${i} - ₹${Online_Store[i]}</p>
+                </div>
+            `;
+        }
+
+
+    </script>
+</body>
+</html>

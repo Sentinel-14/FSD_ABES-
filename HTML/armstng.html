@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Armstrong Number in JavaScript</h2>
+    <p>Open the page and enter a number when the prompt appears.</p>
+
+    <script>
+        const input = prompt('Enter a number:');
+        const number = Number(input);
+
+        if (Number.isNaN(number)) {
+            document.body.innerHTML += '<p>Please enter a valid number.</p>';
+        } else {
+            let temp = Math.abs(number);
+            let sum = 0;
+            let digitCount = 0;
+
+            while (temp > 0) {
+                digitCount++;
+                temp = Math.floor(temp / 10);
+            }
+
+            temp = Math.abs(number);
+
+            while (temp > 0) {
+                const digit = temp % 10;
+                sum += digit ** digitCount;
+                temp = Math.floor(temp / 10);
+            }
+
+            if (sum === Math.abs(number)) {
+                document.body.innerHTML += '<p>' + number + ' is an Armstrong number.</p>';
+            } else {
+                document.body.innerHTML += '<p>' + number + ' is not an Armstrong number.</p>';
+            }
+        }
+    </script>
+</body>
+</html>
